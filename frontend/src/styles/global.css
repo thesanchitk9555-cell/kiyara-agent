@@ -1,0 +1,106 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0a0a1a;
+  color: #e0e0ff;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+.app-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 30%, #1a1a3e, #050510);
+  position: relative;
+}
+.app-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="1" fill="%2300ffff" opacity="0.3"/></svg>') repeat;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.glow-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #00ffff;
+  box-shadow: 0 0 30px #00ffff22;
+  z-index: 10;
+  position: relative;
+}
+.glow-header h1 {
+  text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff88;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+.glow-header nav button {
+  background: transparent;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 10px 25px;
+  border-radius: 40px;
+  margin: 0 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.glow-header nav button:hover {
+  background: #00ffff;
+  color: #0a0a1a;
+  box-shadow: 0 0 30px #00ffff;
+}
+.dashboard {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.stats {
+  display: flex;
+  gap: 40px;
+}
+.stat-card {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff44;
+  border-radius: 20px;
+  padding: 25px 40px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px #00ffff11;
+  font-size: 1.2rem;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background: rgba(0,0,0,0.4);
+  padding: 30px;
+  border-radius: 30px;
+  border: 1px solid #00ffff33;
+}
+.actions input {
+  background: transparent;
+  border: 1px solid #8888ff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 40px;
+  flex: 1;
+  min-width: 200px;
+  font-size: 1rem;
+}
+.actions input::placeholder { color: #8888aa; }
+.actions button {
+  background: #00ffff;
+  color: #0a0a1a;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.actions button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00ffff;
+}
