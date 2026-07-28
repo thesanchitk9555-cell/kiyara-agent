@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: kiyara-frontend
+    runtime: docker
+    repo: https://github.com/yourusername/kiyara-agent
+    plan: free
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://kiyara-backend.onrender.com
