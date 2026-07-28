@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: kiyara-backend
+    runtime: docker
+    rootDir: backend
+    plan: free
+    envVars:
+      - key: VIDEOSDK_API_KEY
+        sync: false
+      - key: VIDEOSDK_SECRET
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_WHATSAPP_FROM
+        sync: false
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: RENDER
+        value: true
+
+  - type: web
+    name: kiyara-frontend
+    runtime: docker
+    rootDir: frontend
+    plan: free
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://kiyara-backend.onrender.com
